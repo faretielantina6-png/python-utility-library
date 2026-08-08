@@ -41,4 +41,14 @@ def gcd(a: int, b: int)->int:
     
 
 def lcm(a: int, b: int)->int:
-    pass
+    """Return the least common multiple of two integers."""
+    if not isinstance(a,int) or not isinstance(b,int):
+        raise TypeError("a and b must be integers")
+    
+    if a == 0 and b == 0:
+        raise ValueError("lcm of 0 and 0 is undefined")
+    
+    if a == 0 or b == 0:
+        return 0
+    return abs(a*b)//gcd(a,b)
+    
