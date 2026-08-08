@@ -29,7 +29,16 @@ def factorial(n: int)->int:
     return result
     
 def gcd(a: int, b: int)->int:
-    pass
+    """Return the greatest common divisor of a and b."""
+    if not isinstance(a,int) or not isinstance(b,int):
+        raise TypeError("a and b must be integers")
+    a = abs(a)
+    b = abs(b)
+
+    while b != 0:
+        a, b = b, a % b
+    return a
+    
 
 def lcm(a: int, b: int)->int:
     pass
