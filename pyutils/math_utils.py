@@ -1,5 +1,13 @@
 def is_prime(n: int)-> bool:
-    """Return True if n is a prime number, otherwise False."""
+    """
+    Return True if n is a prime number, otherwise False.
+    Args:
+        n: Integer to test.
+    Returns:
+        True if n is prime, otherwise False.
+    Raises:
+        TypeError: If n is not an integer.
+    """
     if not isinstance(n,int):
         raise TypeError("n must be an integer")
     if n < 2:
@@ -18,18 +26,35 @@ def is_prime(n: int)-> bool:
       
 
 def factorial(n: int)->int:
-    """Return the factorial of a non-negative integer."""
+    """
+    Return the factorial of a non-negative integer.
+    Args:
+        n: Non-negative integer whose factorial is to be computed.
+    Returns:
+        The factorial of n.
+    Raises:
+        TypeError: If n is not an integer.
+        ValueError: If n is negative.
+    """
     if not isinstance(n,int):
         raise TypeError("n must be an integer")
     if n < 0:
-        raise ValueError("n must be a non-negative")
+        raise ValueError("n must be a non-negative integer")
     result = 1
     for i in range(1,n+1):
         result *= i
     return result
     
 def gcd(a: int, b: int)->int:
-    """Return the greatest common divisor of a and b."""
+    """Return the greatest common divisor of two integers.
+    Args:
+        a: First integer.
+        b: Second integer.
+    Returns:
+        The greatest common divisor of a and b.
+    Raises:
+        TypeError: If a or b is not an integer.
+    """
     if not isinstance(a,int) or not isinstance(b,int):
         raise TypeError("a and b must be integers")
     a = abs(a)
@@ -41,7 +66,17 @@ def gcd(a: int, b: int)->int:
     
 
 def lcm(a: int, b: int)->int:
-    """Return the least common multiple of two integers."""
+    """
+    Return the least common multiple of two integers.
+    Args:
+        a: First integer.
+        b: Second integer.
+    Returns:
+        The least common multiple of a and b.
+    Raises:
+        TypeError: If a or b is not an integer.
+        ValueError: If both a and b are zero.
+    """
     if not isinstance(a,int) or not isinstance(b,int):
         raise TypeError("a and b must be integers")
     
